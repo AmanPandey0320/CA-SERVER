@@ -1,0 +1,9 @@
+/node_modules
+package-lock.json
+.env
+/src/logs
+/logs
+/dist
+/types
+/config.txt
+yarn.lock
