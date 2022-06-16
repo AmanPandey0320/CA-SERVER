@@ -1,5 +1,5 @@
 import { closedatabases, initDatabases } from "../db";
-import server from "../api/app";
+import server from "../main/app";
 import { GRACEFULL_STARTUP_TIMEOUT } from "../config";
 import { createLogger } from "../utils/logger/baseLogger";
 import "reflect-metadata";

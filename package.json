@@ -12,20 +12,12 @@
     "dev": "ts-node src/bin/www.ts",
     "watch": "ts-node-dev --respawn --transpile-only --exit-child --watch src src/bin/www.ts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AmanPandey0320/brs-backend.git"
-  },
   "keywords": [
     "Book",
     "reuse"
   ],
   "author": "Techguru",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AmanPandey0320/brs-backend/issues"
-  },
-  "homepage": "https://github.com/AmanPandey0320/brs-backend#readme",
   "dependencies": {
     "@types/jsonwebtoken": "^8.5.8",
     "@types/reflect-metadata": "^0.1.0",
