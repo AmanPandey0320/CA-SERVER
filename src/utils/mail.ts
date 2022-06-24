@@ -9,6 +9,11 @@ import {
   OAUTH_SECRET,
 } from "../config";
 
+/**
+ * 
+ * @brief: get transporter object for sending mail
+ * @returns {Promise<any>}
+ */
 const getTransporter = () => {
   return new Promise(async (resolve, reject) => {
     try {
@@ -40,6 +45,15 @@ const getTransporter = () => {
   });
 };
 
+
+/**
+ * 
+ * @brief: send mail function using transporter object & oAuth2Client
+ * @param email 
+ * @param subject 
+ * @param body 
+ * @returns 
+ */
 const sendMail = (email: string, subject: string, body: string) => {
   return new Promise(async (resolve, reject) => {
     try {

@@ -21,6 +21,7 @@ class AuthSignInController extends BaseController {
     res: Response<any, Record<string, any>>
   ): Promise<void> {
     try {
+      console.log(global.CA);
       const body = req.body;
       const { email, username, password } = body;
       if (!(password && (username || email))) {

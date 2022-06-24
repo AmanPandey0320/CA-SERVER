@@ -3,6 +3,8 @@ import server from "../main/app";
 import { GRACEFULL_STARTUP_TIMEOUT } from "../config";
 import { createLogger } from "../utils/logger/baseLogger";
 import "reflect-metadata";
+import path from "path";
+import utils from "../utils";
 
 let startCall = false;
 let stopCall = false;
@@ -33,6 +35,19 @@ process.on("SIGTERM", () => {
 startProcedure();
 
 /**
+ * 
+ * @brief sets global variables
+ * @returns void
+ */
+function setGlobalvariables():void{
+  global.CA = {
+    root: path.resolve(__dirname, "../"),
+    utils:utils
+  }
+  return;
+}
+
+/**
  * @description starts procedure
  * @returns
  */
@@ -47,6 +62,10 @@ async function startProcedure(): Promise<void> {
   }, GRACEFULL_STARTUP_TIMEOUT);
   //connecting to services
   const [DB] = await Promise.all([initDatabases()]);
+
+  //setting global variables
+
+  setGlobalvariables();
 
   // validating services
   if (!DB) {

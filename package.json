@@ -19,6 +19,7 @@
   "author": "Techguru",
   "license": "ISC",
   "dependencies": {
+    "@types/jsonfile": "^6.1.0",
     "@types/jsonwebtoken": "^8.5.8",
     "@types/reflect-metadata": "^0.1.0",
     "connect-mongo": "^3.2.0",
@@ -33,6 +34,7 @@
     "express-session": "^1.17.2",
     "fast-two-sms": "^3.0.0",
     "googleapis": "^95.0.0",
+    "jsonfile": "^6.1.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.2.3",
     "mysql": "^2.18.1",
