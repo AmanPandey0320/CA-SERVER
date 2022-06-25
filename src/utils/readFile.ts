@@ -21,8 +21,4 @@ function json(filePath: string): Promise<any> {
   });
 }
 
-const fileReader = {
-  json: json,
-};
-
-export default fileReader;
+export { json };

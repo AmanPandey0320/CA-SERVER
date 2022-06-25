@@ -54,8 +54,8 @@ const getTransporter = () => {
  * @param body 
  * @returns 
  */
-const sendMail = (email: string, subject: string, body: string) => {
-  return new Promise(async (resolve, reject) => {
+export const sendMail = (email: string, subject: string, body: string):Promise<string> => {
+  return new Promise<string>(async (resolve, reject) => {
     try {
       const transporter: any = await getTransporter();
       await transporter.sendMail({

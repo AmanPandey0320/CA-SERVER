@@ -1,0 +1,87 @@
+{
+  "name": "users",
+  "table": "ca_users",
+  "code": "CAFR0000001",
+  "attr": {
+    "id": {
+      "type": "int",
+      "auto_increment": true,
+      "primary_key": true,
+      "allow_null": false
+    },
+    "username": {
+      "type": "varchar",
+      "size": 255,
+      "allow_null": false,
+      "unique": true
+    },
+    "password": {
+      "type": "text",
+      "allow_null": false
+    },
+    "email": {
+      "type": "varchar",
+      "size": 255,
+      "allow_null": false,
+      "unique": true
+    },
+    "first_name": {
+      "type": "varchar",
+      "size": 255,
+      "allow_null": false
+    },
+    "last_name": {
+      "type": "varchar",
+      "size": 255,
+      "allow_null": false
+    },
+    "created_at": {
+      "type": "datetime",
+      "allow_null": false
+    },
+    "updated_at": {
+      "type": "datetime",
+      "allow_null": false
+    }
+  },
+  "indexes": ["username", "email"],
+  "operations": {
+    "select": {
+      "query": "SELECT * FROM ca_users WHERE id = ?",
+      "params": ["id"]
+    },
+    "selectByUsername": {
+      "query": "SELECT * FROM ca_users WHERE username = ?",
+      "params": ["username"]
+    },
+    "selectByEmail": {
+      "query": "SELECT * FROM ca_users WHERE email = ?",
+      "params": ["email"]
+    },
+    "update": {
+      "query": "UPDATE ca_users SET ca_users.username = COALESCE(?,ca_users.username), ca_users.password = COALESCE(?,ca_users.password), ca_users.email = COALESCE(?,ca_users.email), ca_users.first_name = COALESCE(?,ca_users.first_name), ca_users.last_name = COALESCE(?,ca_users.last_name), ca_users.updated_at = NOW() WHERE ca_users.id = ?",
+      "params": [
+        "username",
+        "password",
+        "email",
+        "first_name",
+        "last_name",
+        "id"
+      ]
+    },
+    "delete": {
+      "query": "DELETE FROM ca_users WHERE id = ?",
+      "params": ["id"]
+    },
+    "insert": {
+      "query": "INSERT INTO ca_users (username, password, email, first_name, last_name, created_at, updated_at) VALUES (?,?,?,?,?,NOW(),NOW())",
+      "params": [
+        "username",
+        "password",
+        "email",
+        "first_name",
+        "last_name"
+      ]
+    }
+  }
+}

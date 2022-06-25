@@ -5,7 +5,7 @@ const fast2sms = require("fast-two-sms");
 const CONTEXT = "SMS";
 const logger = createLogger(CONTEXT);
 
-const sendMessage = (
+export const sendMessage = (
   message: string,
   numbers: Array<string>
 ): Promise<boolean> => {

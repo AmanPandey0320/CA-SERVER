@@ -8,6 +8,7 @@
     "start": "bash scripts/prod.sh",
     "serve": "node ./dist/bin/www.js",
     "html": "copyfiles -u 2 ./src/template/*.ejs ./dist/template/",
+    "json": "copyfiles -u 2 ./src/main/formDef/*.json ./dist/main/",
     "build": "tsc",
     "dev": "ts-node src/bin/www.ts",
     "watch": "ts-node-dev --respawn --transpile-only --exit-child --watch src src/bin/www.ts"
